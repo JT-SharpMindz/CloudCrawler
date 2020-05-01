@@ -32,17 +32,17 @@ function canvasDrop(e)
 	canvas.innerHTML=canvas.innerHTML+e.dataTransfer.getData('Aws_S3')+e.dataTransfer.getData('Aws_EC2');	
 }
 function startDrag() {
-      document.onmouseup = finishDrag;
+      canvas.onmouseup = finishDrag;
 
-      document.onmousemove = function(e) {
+      canvas.onmousemove = function(e) {
         divA.style.top = (divA.offsetTop + e.movementY) + "px";
         divA.style.left = (divA.offsetLeft + e.movementX) + "px";
       }
     }
 
     function finishDrag() {
-      document.onmouseup = null;
-      document.onmousemove = null;
+      canvas.onmouseup = null;
+      canvas.onmousemove = null;
     }
 
 function reply_click(clicked_class)
