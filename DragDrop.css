@@ -21,6 +21,7 @@
 #subcanvas{
 	float:left;
 	width:700px;
+	position: absolute;
 	height:550px;
 }
 img[id^="aws"]{
