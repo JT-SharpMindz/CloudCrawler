@@ -22,7 +22,7 @@ e.dataTransfer.setData('Aws_EC2',imageCode);
 function s3Drag(e)
 {
 s3Counter+=1;
-imageCode='<div id=div_s3_'+s3Counter+ ' draggable="true" style="position: absolute;"><img src="s3.png" class="aws_s3"></div>';
+imageCode='<div id=div_s3_'+s3Counter+ ' draggable="true" style="position: absolute;" onClick="reply_click(this.id)"><img src="s3.png" class="aws_s3"></div>';
 	e.dataTransfer.setData('Aws_S3',imageCode);
 	
 }
