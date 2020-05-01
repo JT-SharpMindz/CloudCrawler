@@ -1,6 +1,7 @@
 var imageCode="", ec2Counter=0, s3Counter=0;
 var divA;
 var subcanvas;
+var isMoved=false;
 
 function init()
 {
@@ -29,11 +30,15 @@ imageCode='<div id=div_s3_'+s3Counter+ ' draggable="true" style="position: absol
 function canvasDrop(e)
 {	
 	e.preventDefault();
-	canvas.innerHTML=canvas.innerHTML+e.dataTransfer.getData('Aws_S3')+e.dataTransfer.getData('Aws_EC2');	
+	if(!isMoved)
+		canvas.innerHTML=canvas.innerHTML+e.dataTransfer.getData('Aws_S3')+e.dataTransfer.getData('Aws_EC2')+'<br>'+'<br>'+'<br>'+'<br>'+'<br>';	
+	else
+		canvas.innerHTML=canvas.innerHTML+e.dataTransfer.getData('Aws_S3')+e.dataTransfer.getData('Aws_EC2');
+	isMoved=false;
 }
 function startDrag() {
       canvas.onmouseup = finishDrag;
-
+	  isMoved=true;
       canvas.onmousemove = function(e) {
         divA.style.top = (divA.offsetTop + e.movementY) + "px";
         divA.style.left = (divA.offsetLeft + e.movementX) + "px";

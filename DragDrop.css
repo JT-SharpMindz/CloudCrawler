@@ -11,18 +11,13 @@
 }
 #canvas{
 	float:left;
+	position: relative;
 	width:50%;
 	height:530px;
 	margin:5px;
 	border:3px solid grey;
 	overflow-y: auto;
 	background-image: url(canvas-background.png);
-}
-#subcanvas{
-	float:left;
-	width:700px;
-	position: absolute;
-	height:550px;
 }
 img[id^="aws"]{
 	margin:2px;
